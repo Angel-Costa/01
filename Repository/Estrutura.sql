@@ -2,7 +2,8 @@
 CREATE TABLE logins(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	email VARCHAR(100),
-	senha VARCHAR(100)
+	senha VARCHAR(100),
+	registro_ativo BIT
 );
 
 CREATE TABLE clientes(
@@ -14,7 +15,8 @@ CREATE TABLE clientes(
 	nome VARCHAR(100),
 	cpf VARCHAR(100),
 	rg VARCHAR(100),
-	celular VARCHAR(100)
+	celular VARCHAR(100),
+	registro_ativo BIT
 );
 
 CREATE TABLE avaliacoes(
@@ -25,7 +27,8 @@ CREATE TABLE avaliacoes(
 	nota DECIMAL(8,2),
 
 	comentario VARCHAR(100),
-	feedback VARCHAR(100)
+	feedback VARCHAR(100),
+	registro_ativo BIT
 );
 
 CREATE TABLE hoteis(
@@ -38,7 +41,9 @@ CREATE TABLE hoteis(
 	enderecos VARCHAR(100),
 
 	id_avaliacao INT
-	FOREIGN KEY(id_avaliacao) REFERENCES avaliacoes(id)
+	FOREIGN KEY(id_avaliacao) REFERENCES avaliacoes(id),
+
+	registro_ativo BIT
 );
 
 CREATE TABLE comodidades(
@@ -54,5 +59,6 @@ CREATE TABLE comodidades(
 	microondas BIT,
 	refrigerador BIT,
 	forno BIT,
-	lareira_interna BIT
+	lareira_interna BIT,
+	registro_ativo BIT
 );
