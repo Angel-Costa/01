@@ -16,7 +16,8 @@ namespace Repository.Repositories
         }
 
         public bool Apagar(int idCliente)
-        {                                                
+        {                              
+            
         }
 
         public Cliente ObterPeloId(int id)

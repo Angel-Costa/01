@@ -8,13 +8,7 @@ namespace Model
 {
     [Table("clientes")]
     public class Cliente : Base
-    {                                
-        [ForeignKey ("IdLogin")]
-        public Login Login { get; set; }
-
-        [Column ("id_login")]
-        public int IdLogin { get; set; }
-
+    {                                                                
         [Column ("nome")]
         public string Nome { get; set; }
 
