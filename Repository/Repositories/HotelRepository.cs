@@ -10,7 +10,7 @@ namespace Repository.Repositories
     {
         public bool Alterar(Hotel hotel)
         {
-            throw new NotImplementedException();
+            hotel.RegistroAtivo = true;
         }
 
         public bool Apagar(int id)
