@@ -7,12 +7,15 @@ namespace Repository.Interfaces
 {
     public interface IClienteRepository
     {
-        int Relacionar(Cliente cliente);
 
-        bool Apagar(int idCliente);
+        int Inserir(Cliente cliente);
 
-        List<Cliente> ObterTodosPeloIdCliente(int idCliente);
+        bool Alterar(Cliente cliente);
+
+        List<Cliente> ObterTodos(int id);
 
         Cliente ObterPeloId(int id);
+
+        bool Apagar(int idCliente);
     }
 }
