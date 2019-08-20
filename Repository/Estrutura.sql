@@ -62,3 +62,14 @@ CREATE TABLE comodidades(
 	lareira_interna BIT,
 	registro_ativo BIT
 );
+
+CREATE TABLE clientes_logins (
+	id INT PRIMARY KEY IDENTITY(1,1),
+
+	id_cliente INT,
+	FOREIGN KEY(id_cliente) REFERENCES clientes(id),
+
+	id_login INT,
+	FOREIGN KEY (id_login) REFERENCES logins(id),
+	registro_ativo BIT
+);
