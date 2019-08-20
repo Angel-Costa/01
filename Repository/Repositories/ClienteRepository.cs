@@ -10,6 +10,7 @@ namespace Repository.Repositories
     public class ClienteRepository : IClienteRepository
     {
         public SistemaContext context;
+
         public ClienteRepository(SistemaContext context)
         {
             this.context = context;

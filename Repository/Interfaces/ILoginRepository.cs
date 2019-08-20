@@ -9,6 +9,12 @@ namespace Repository.Interfaces
     {
         int Inserir(Login login);
 
-        
+        bool Alterar(Login login);
+
+        List<Login> ObterTodos();
+
+        Login ObterPeloId(int id);
+
+        bool Apagar(int login);
     }
 }
