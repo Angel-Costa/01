@@ -6,5 +6,6 @@ namespace Repository.Interfaces
 {
     public interface ILoginRepository
     {
+        
     }
 }
