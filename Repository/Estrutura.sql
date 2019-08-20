@@ -63,7 +63,7 @@ CREATE TABLE comodidades(
 	registro_ativo BIT
 );
 
-CREATE TABLE cliente_login (
+CREATE TABLE clientes_logins (
 	id INT PRIMARY KEY IDENTITY(1,1),
 
 	id_cliente INT,

@@ -18,6 +18,7 @@ namespace Repository
         public DbSet<Comodidade> Comodidades { get; set; }
         public DbSet<Hotel> Hotels { get; set; }
         public DbSet<Login> Logins { get; set; }
+        public DbSet<ClienteLogin> ClientesLogins { get; set; }
 
     }
 }
