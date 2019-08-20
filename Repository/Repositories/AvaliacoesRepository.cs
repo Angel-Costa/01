@@ -47,7 +47,7 @@ namespace Repository.Repositories
 
         public List<Avaliacao> ObterTodos()
         {
-            throw new NotImplementedException();
+            return context.Avaliacaos.Where(x => x.RegistroAtivo).ToList();
         }
     }
 }

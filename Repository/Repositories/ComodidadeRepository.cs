@@ -2,35 +2,53 @@
 using Repository.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Repository.Repositories
 {
     public class ComodidadeRepository : IComodidadeRepository
     {
+        public SistemaContext context;
+
+        public ComodidadeRepository(SistemaContext context)
+        {
+            this.context = context;
+        }
+
         public bool Alterar(Comodidade comodidade)
         {
-            throw new NotImplementedException();
+            context.Comodidades.Update(comodidade);
+            return context.SaveChanges() == 1;
         }
 
         public bool Apagar(int id)
         {
-            throw new NotImplementedException();
+            var comodidade = context.Comodidades.FirstOrDefault(x => x.Id == id);
+            if (comodidade == null)
+                return false;
+
+            comodidade.RegistroAtivo = false;
+            context.Comodidades.Update(comodidade);
+            return context.SaveChanges() == 1;
+
         }
 
         public int Inserir(Comodidade comodidade)
         {
-            throw new NotImplementedException();
+            context.Comodidades.Add(comodidade);
+            context.SaveChanges();
+            return comodidade.Id;
         }
 
         public Comodidade ObterPeloId(int id)
         {
-            throw new NotImplementedException();
+            return context.Comodidades.FirstOrDefault(x => x.Id == id);
         }
 
         public List<Comodidade> ObterTodos()
         {
-            throw new NotImplementedException();
+            return context.Comodidades.Where(x => x.RegistroAtivo).ToList();
         }
     }
 }
